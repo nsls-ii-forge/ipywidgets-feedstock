@@ -1,0 +1,41 @@
+{% set name = "ipywidgets" %}
+{% set version = "7.2.1" %}
+{% set sha256 = "ab9869cda5af7ba449d8f707b29b7e97a7db97d6366805d6b733338f51096f54" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  number: 0
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps
+
+requirements:
+  host:
+    - python >=3.6
+    - pip
+  run:
+    - python >=3.6
+    - ipykernel >=4.5.1
+    - nbformat >=4.2.0
+    - traitlets >=4.3.1
+    - widgetsnbextension
+
+test:
+  imports:
+    - ipywidgets
+    - ipywidgets.widgets
+
+about:
+  home: http://ipython.org
+  license: BSD-3-Clause
+  license_family: BSD
+  license_file: COPYING.md
+  summary: IPython HTML widgets for Jupyter
+  doc_url: https://ipywidgets.readthedocs.io/
+  dev_url: https://github.com/jupyter-widgets/ipywidgets/releases/tag/7.2.1
