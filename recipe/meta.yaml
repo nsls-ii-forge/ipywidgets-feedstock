@@ -35,7 +35,7 @@ about:
   home: http://ipython.org
   license: BSD-3-Clause
   license_family: BSD
-  license_file: COPYING.md
+  license_file: LICENSE
   summary: IPython HTML widgets for Jupyter
   doc_url: https://ipywidgets.readthedocs.io/
   dev_url: https://github.com/jupyter-widgets/ipywidgets/releases/tag/7.2.1
